@@ -37,3 +37,17 @@ dependencies {
     api files('libs/getmorefatdata.jar')
     api files('libs/iWeightLibrary.jar')
 }
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.elinkthings'
+                artifactId = 'BodyFatScaleSDKRepositoryAndroid'
+                version = "1.5.1"
+            }
+        }
+    }
+}
